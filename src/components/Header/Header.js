@@ -4,15 +4,24 @@ import { NavLink } from "react-router-dom";
 import "./Header.css";
 
 export const Header = () => {
+	// Styling active route
+	const activeStyle = ({ isActive }) => {
+		return {
+			color: isActive ? "#8600f4" : "#000000",
+			backgroundColor: isActive ? "#eae0fa" : "#ffffff",
+		};
+	};
+
 	// Header link component
 	const HeaderLink = ({ route, name, icon }) => {
 		return (
-			<NavLink to={route} className="header-link">
+			<NavLink to={route} className="header-link" style={activeStyle}>
 				{name}
 				{icon && <span>{icon}</span>}
 			</NavLink>
 		);
 	};
+
 	return (
 		<header>
 			<section className="header-left">
@@ -21,7 +30,7 @@ export const Header = () => {
 				</div>
 				<ul>
 					<li>
-						<HeaderLink route="/rent" name="Rent" />
+						<HeaderLink route="/" name="Rent" />
 					</li>
 					<li>
 						<HeaderLink route="/buy" name="Buy" />
