@@ -7,8 +7,8 @@ export const Header = () => {
 	// Styling active route
 	const activeStyle = ({ isActive }) => {
 		return {
-			color: isActive ? "#8600f4" : "#000000",
-			backgroundColor: isActive ? "#eae0fa" : "#ffffff",
+			color: isActive ? "#8600f4" : "inherit",
+			backgroundColor: isActive ? "#eae0fa" : "inherit",
 		};
 	};
 
@@ -30,23 +30,33 @@ export const Header = () => {
 				</div>
 				<ul>
 					<li>
-						<HeaderLink route="/" name="Rent" />
+						<span>
+							<HeaderLink route="/" name="Rent" />
+						</span>
 					</li>
 					<li>
-						<HeaderLink route="/buy" name="Buy" />
+						<span>
+							<HeaderLink route="/buy" name="Buy" />
+						</span>
 					</li>
 					<li>
-						<HeaderLink route="/sell" name="Sell" />
+						<span>
+							<HeaderLink route="/sell" name="Sell" />
+						</span>
 					</li>
 					<li>
-						<HeaderLink
-							route="/property"
-							name="Manage Property"
-							icon={<IoIosArrowDown />}
-						></HeaderLink>
+						<span>
+							<HeaderLink
+								route="/property"
+								name="Manage Property"
+								icon={<IoIosArrowDown />}
+							/>
+						</span>
 					</li>
 					<li>
-						<HeaderLink route="/favorite" name="Favorite" />
+						<span>
+							<HeaderLink route="/favorite" name="Favorite" />
+						</span>
 					</li>
 				</ul>
 			</section>
