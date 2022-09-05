@@ -1,0 +1,54 @@
+.container-home {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.home-title {
+    display: flex;
+}
+
+.home-title form {
+    margin-left: auto;
+    border: 2px solid var(--border-color);
+    display: flex;
+    background-color: white;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 .5rem;
+}
+
+.home-title form input {
+    border: none;
+    background-color: inherit;
+    outline: none;
+    padding: .5rem;
+}
+
+.home-title form input::placeholder {
+    color: #510291;
+    font-weight: 600;
+    opacity: .5;
+}
+
+.home-title form span {
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    color: grey;
+}
+
+.home-status{
+    color: grey;
+}
+
+.home-properties {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+}

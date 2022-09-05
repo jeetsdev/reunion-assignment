@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --primary-color: #8600f4;
+    --secondary-color: #eae0fa;
+    --border-color: #dbdbdb;
+    --background-color: #f8f5fd;
+}
+
+body {
+    font-size: 100%;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.App {
+    background-color: var(--background-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 80%;
+    min-height: 100vh;
+}
+
+/* Common style */
+
+.btn {
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all .3s ease-in-out;
+    transition-property: color, background-color, border;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: inherit;
+    border: 2px solid var(--border-color);
+    color: var(--primary-color);
+
+}
+
+.btn-secondary {
+    background-color: inherit;
+    border: 2px solid var(--border-color);
+    color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border: 2px solid var(--primary-color);
+}
