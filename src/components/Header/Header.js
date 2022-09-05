@@ -36,6 +36,11 @@ export const Header = () => {
 					</li>
 					<li>
 						<span>
+							<HeaderLink route="/favorite" name="Favorite" />
+						</span>
+					</li>
+					<li>
+						<span>
 							<HeaderLink route="/buy" name="Buy" />
 						</span>
 					</li>
@@ -51,11 +56,6 @@ export const Header = () => {
 								name="Manage Property"
 								icon={<IoIosArrowDown />}
 							/>
-						</span>
-					</li>
-					<li>
-						<span>
-							<HeaderLink route="/favorite" name="Favorite" />
 						</span>
 					</li>
 				</ul>
