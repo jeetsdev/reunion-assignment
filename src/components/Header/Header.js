@@ -61,8 +61,8 @@ export const Header = () => {
 				</ul>
 			</section>
 			<section className="header-right">
-				<button>Login</button>
-				<button>Sign up</button>
+				<button className="btn btn-secondary">Login</button>
+				<button className="btn btn-primary">Sign up</button>
 			</section>
 		</header>
 	);

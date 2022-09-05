@@ -57,25 +57,10 @@ ul .header-link span {
     margin: 0 5px;
 }
 
-.header-right button {
-    padding: .5rem 1rem;
-    border-radius: 5px;
-    outline: none;
-    border: transparent;
-    cursor: pointer;
-    font-weight: 600;
-}
-
 .header-right button:first-child {
-    background-color: inherit;
-    border: 2px solid var(--border-color);
-    color: var(--primary-color);
     margin-right: 1rem;
 }
 
 .header-right button:last-child {
-    background-color: var(--primary-color);
-    border: 2px solid var(--primary-color);
     margin-right: 1rem;
-    color: white;
 }
