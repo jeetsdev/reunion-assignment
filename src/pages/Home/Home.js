@@ -1,22 +1,42 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { Filter, PropertyCard } from "../../components";
 import { AiOutlineSearch } from "react-icons/ai";
 import "./Home.css";
 import { useFilter, usePropertyData } from "../../contexts";
-import { filterData } from "../../utils/filterData";
+import {
+	debounceSearch as debounce,
+	filterData,
+	searchProperty,
+} from "../../utils";
 
 export const Home = () => {
 	const { filterState } = useFilter();
 	const { propertyData } = usePropertyData();
+	const [finalPropertyData, setFinalPropertyData] = useState(propertyData);
 
-	const filterdPropertyData = filterData(filterState, propertyData);
+	// Debouncing search here
+	const search = (text) => {
+		setFinalPropertyData(searchProperty(text, propertyData));
+	};
+	const searchInputHandler = debounce(search, 1000);
+
+	useEffect(() => {
+		setFinalPropertyData(filterData(filterState, propertyData));
+	}, [filterState, propertyData]);
 
 	return (
 		<div className="container-home">
 			<div className="home-title">
 				<h1>Search Properties to rent</h1>
-				<form action="">
-					<input type="text" placeholder="Search with Search Bar" />
+				<form
+					className="home-search"
+					onSubmit={(e) => e.preventDefault()}
+				>
+					<input
+						type="text"
+						onChange={(e) => searchInputHandler(e.target.value)}
+						placeholder="Search by title, city or street"
+					/>
 					<span>
 						<AiOutlineSearch />
 					</span>
@@ -26,14 +46,14 @@ export const Home = () => {
 				<Filter />
 			</div>
 			<p className="home-status">
-				(Showing {filterdPropertyData.length} properties out of{" "}
+				(Showing {finalPropertyData.length} properties out of{" "}
 				{propertyData.length} properties)
 			</p>
-			{filterdPropertyData.length === 0 ? (
-				<h3>No items found, Please clear filters.</h3>
+			{finalPropertyData?.length === 0 ? (
+				<h3>No items found, Please clear search and filters.</h3>
 			) : (
 				<div className="properties-container">
-					{filterdPropertyData?.map((property) => {
+					{finalPropertyData?.map((property) => {
 						return (
 							<PropertyCard
 								property={property}
