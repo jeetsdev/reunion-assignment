@@ -4,13 +4,15 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
-import { FilterProvider } from "./contexts";
+import { FilterProvider, PropertyDataProvider } from "./contexts";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	<React.StrictMode>
 		<Router>
 			<FilterProvider>
-				<App />
+				<PropertyDataProvider>
+					<App />
+				</PropertyDataProvider>
 			</FilterProvider>
 		</Router>
 	</React.StrictMode>,

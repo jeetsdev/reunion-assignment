@@ -46,7 +46,7 @@
     color: grey;
 }
 
-.home-properties {
+.properties-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;

@@ -1,15 +1,16 @@
 import React from "react";
 import { Filter, PropertyCard } from "../../components";
-import propertyData from "../../data/data.json";
 import { AiOutlineSearch } from "react-icons/ai";
 import "./Home.css";
-import { useFilter } from "../../contexts";
+import { useFilter, usePropertyData } from "../../contexts";
 import { filterData } from "../../utils/filterData";
 
 export const Home = () => {
 	const { filterState } = useFilter();
+	const { propertyData } = usePropertyData();
 
 	const filterdPropertyData = filterData(filterState, propertyData);
+
 	return (
 		<div className="container-home">
 			<div className="home-title">
@@ -29,11 +30,9 @@ export const Home = () => {
 				{propertyData.length} properties)
 			</p>
 			{filterdPropertyData.length === 0 ? (
-				<h3>
-					No items found, Please clear filters.
-				</h3>
+				<h3>No items found, Please clear filters.</h3>
 			) : (
-				<div className="home-properties">
+				<div className="properties-container">
 					{filterdPropertyData?.map((property) => {
 						return (
 							<PropertyCard
