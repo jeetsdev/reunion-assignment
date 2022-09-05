@@ -1,0 +1,10 @@
+.container-fav {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.container-fav p{
+    color: grey;
+}
