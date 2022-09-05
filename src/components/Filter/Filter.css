@@ -1,0 +1,86 @@
+/* ! Filter container style */
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.filter-container>div {
+    display: flex;
+    width: 100%;
+}
+
+.filter-container button {
+    margin: 0 2rem;
+}
+
+/*! Dropdown componnet style */
+.dropdown-container {
+    width: 100%;
+    border-right: 1px solid var(--border-color);
+    padding: 0 2rem;
+}
+
+.dropdown-container .dropdown-title {
+    color: grey;
+    font-size: .75rem;
+    opacity: .7;
+}
+
+.dropdown-container .dropdown {
+    position: relative;
+    display: flex;
+    margin: .5rem 0;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.dropdown>span {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    background-color: var(--background-color);
+}
+
+.dropdown .dropdown-label {
+    color: var(--primary-color);
+}
+
+.dropdown>.dropdown-options {
+    position: absolute;
+    top: calc(100% + 10px);
+    background-color: var(--background-color);
+    left: 0;
+    right: 0;
+    padding: 1rem .5rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 5px 0px rgba(0, 0, 0, .2);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: all .3s ease-in-out;
+    transition-property: opacity transform;
+}
+
+.dropdown-options.dropdown-active {
+    opacity: 1;
+    transform: translateY(0px);
+    pointer-events: auto;
+}
+
+.dropdown-options p {
+    color: grey;
+    padding: .5rem 0;
+    transition: color .2s ease-in-out;
+}
+
+.dropdown-options p:hover {
+    color: var(--primary-color);
+}
